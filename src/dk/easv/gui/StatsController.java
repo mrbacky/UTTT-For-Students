@@ -8,7 +8,7 @@ package dk.easv.gui;
 import com.jfoenix.controls.JFXListView;
 import dk.easv.bll.game.stats.GameResult;
 import dk.easv.bll.game.stats.GameResult.Winner;
-import dk.easv.gui.util.FontAwesomeHelper;
+//import dk.easv.gui.util.FontAwesomeHelper;
 import java.net.URL;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
@@ -31,13 +31,13 @@ public class StatsController implements Initializable {
     private JFXListView<GameResult> listResults;
 
     private StatsModel statsModel;
-    
-    private final String[] allPlayerstyles = {"playerTIE","player0","player1"};
+
+    private final String[] allPlayerstyles = {"playerTIE", "player0", "player1"};
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        listResults.setCellFactory(p->new CustomGameResultListCell());
-    }    
+        listResults.setCellFactory(p -> new CustomGameResultListCell());
+    }
 
     public void setStatsModel(StatsModel statsModel, Stage stage) {
         this.statsModel = statsModel;
@@ -55,37 +55,37 @@ public class StatsController implements Initializable {
         @Override
         protected void updateItem(GameResult item, boolean empty) {
             super.updateItem(item, empty);
-            Node fontAwe=FontAwesomeHelper.getFontAwesomeIconFromPlayerId("TIE");
+//            Node fontAwe=FontAwesomeHelper.getFontAwesomeIconFromPlayerId("TIE");
             this.getStyleClass().removeAll(allPlayerstyles);
             String winName = "Tie";
             String styleClass = "playerTIE";
             if (!empty && item != null) {
-                if(item.getWinner()==Winner.player0) {
-                    fontAwe =
-                        FontAwesomeHelper.getFontAwesomeIconFromPlayerId("0");
+                if (item.getWinner() == Winner.player0) {
+//                    fontAwe =
+//                        FontAwesomeHelper.getFontAwesomeIconFromPlayerId("0");
                     winName = item.getPlayer0();
-                    styleClass=("player0");
-                } else if (item.getWinner()==Winner.player1) {
-                    fontAwe =
-                        FontAwesomeHelper.getFontAwesomeIconFromPlayerId("1");
+                    styleClass = ("player0");
+                } else if (item.getWinner() == Winner.player1) {
+//                    fontAwe =
+//                    FontAwesomeHelper.getFontAwesomeIconFromPlayerId("1");
                     winName = item.getPlayer1();
-                    styleClass=("player1");
+                    styleClass = ("player1");
                 }
-                this.setGraphic(fontAwe);
+//                this.setGraphic(fontAwe);
                 this.getStyleClass().add(styleClass);
                 this.getStyleClass().add("stat-items");
                 DateTimeFormatter dtf = DateTimeFormatter.ofPattern(
                         "dd-MM-yyyy HH:mm:ss");
-                this.setText(item.getDate().format(dtf) + "\t" +
-                        item.getPlayer0() + 
-                        " vs " + 
-                        item.getPlayer1() + 
-                        " | " + winName);
+                this.setText(item.getDate().format(dtf) + "\t"
+                        + item.getPlayer0()
+                        + " vs "
+                        + item.getPlayer1()
+                        + " | " + winName);
                 this.setContentDisplay(ContentDisplay.RIGHT);
-            }   else
+            } else {
                 setText(null);
+            }
         }
     }
-    
-    
+
 }

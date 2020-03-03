@@ -5,7 +5,7 @@ import dk.easv.bll.bot.IBot;
 import dk.easv.bll.game.GameManager;
 import dk.easv.bll.game.stats.GameResult;
 import dk.easv.dal.DynamicBotClassHandler;
-import static dk.easv.gui.util.FontAwesomeHelper.getFontAwesomeIconFromPlayerId;
+//import static dk.easv.gui.util.FontAwesomeHelper.getFontAwesomeIconFromPlayerId;
 import static dk.easv.dal.DynamicBotClassHandler.loadBotList;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -93,8 +93,8 @@ public class AppController implements Initializable {
         comboBotsRight.setCellFactory(p -> new CustomIBotListCell());
         comboBotsRight.setItems(bots);
         btnStart.setDisableVisualFocus(true);
-        btnDiamond.setGraphic(getFontAwesomeIconFromPlayerId("1"));
-        btnTrash.setGraphic(getFontAwesomeIconFromPlayerId("0"));
+//        btnDiamond.setGraphic(getFontAwesomeIconFromPlayerId("1"));
+//        btnTrash.setGraphic(getFontAwesomeIconFromPlayerId("0"));
 
         radioLeftAI.selectedProperty().addListener((observable, oldValue, newValue) -> comboBotsLeft.setDisable(!newValue));
         radioLeftHuman.selectedProperty().addListener((observable, oldValue, newValue) -> txtHumanNameLeft.setDisable(!newValue));

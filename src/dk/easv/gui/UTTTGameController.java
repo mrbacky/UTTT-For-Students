@@ -9,7 +9,7 @@ import dk.easv.bll.game.GameManager;
 import dk.easv.bll.game.stats.GameResult;
 import dk.easv.bll.move.IMove;
 import dk.easv.bll.move.Move;
-import static dk.easv.gui.util.FontAwesomeHelper.getFontAwesomeIconFromPlayerId;
+//import static dk.easv.gui.util.FontAwesomeHelper.getFontAwesomeIconFromPlayerId;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -156,8 +156,8 @@ public class UTTTGameController implements Initializable {
         lbl.setPrefSize(Double.MAX_VALUE, Double.MAX_VALUE);
         lbl.setAlignment(Pos.CENTER);
 
-        Text fontAwesomeIcon = getFontAwesomeIconFromPlayerId(winner + "");
-        lbl.setGraphic(fontAwesomeIcon);
+//        Text fontAwesomeIcon = getFontAwesomeIconFromPlayerId(winner + "");
+//        lbl.setGraphic(fontAwesomeIcon);
         GridPane gridPane = new GridPane();
         gridPane.addColumn(0);
         gridPane.addRow(0);
@@ -280,7 +280,7 @@ public class UTTTGameController implements Initializable {
                 }
                 else {
                     jfxButtons[i][k].getStyleClass().add("player" + board[i][k]);
-                    jfxButtons[i][k].setGraphic(getFontAwesomeIconFromPlayerId(board[i][k]));
+//                    jfxButtons[i][k].setGraphic(getFontAwesomeIconFromPlayerId(board[i][k]));
                 }
 
             }
@@ -313,7 +313,7 @@ public class UTTTGameController implements Initializable {
         String[][] macroBoard = model.getMacroboard();
         gridMacro.getChildren().remove(gridMicros[x][y]);
         Label lbl = new Label("");
-        lbl.setGraphic(getFontAwesomeIconFromPlayerId(macroBoard[x][y]));
+//        lbl.setGraphic(getFontAwesomeIconFromPlayerId(macroBoard[x][y]));
         lbl.getStyleClass().add("winner-label");
         lbl.getStyleClass().add("player" + macroBoard[x][y]);
         lbl.setPrefSize(Double.MAX_VALUE, Double.MAX_VALUE);
